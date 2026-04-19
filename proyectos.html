@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Proyectos — Josué Nivar de Jesús</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="dark">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-badge">JNJ</div>
+    <div class="logo-info">
+      <p>Josué Nivar de Jesús</p>
+      <span>Ingeniero Industrial</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="sobre-mi.html">Sobre mí</a></li>
+    <li><a href="habilidades.html">Habilidades</a></li>
+    <li><a href="proyectos.html" class="active">Proyectos</a></li>
+    <li><a href="experiencia.html">Experiencia</a></li>
+    <li><a href="certificaciones.html">Certificaciones</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="page-header" data-initials="JNJ">
+  <div class="page-header-tag">Portafolio</div>
+  <h1>Mis <em>proyectos</em></h1>
+  <p>Soluciones reales desarrolladas con datos, automatización y análisis.</p>
+</div>
+
+<div class="content">
+  <div class="section-tag">Proyectos reales</div>
+  <h2 class="section-title">Lo que he construido</h2>
+  <div class="grid-3">
+
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #0a1628 0%, #185FA5 100%);">
+        📊
+        <span class="card-img-label">Automatización</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Resumen de Puestos y Posiciones — Banco y Empresas</div>
+        <div class="card-desc">Desarrollo de una macro en VBS para filtrar y limpiar la data generada desde la herramienta de estructura organizacional, exportándola a Power BI para visualizar en tiempo real la cantidad de puestos y posiciones por grupo ocupacional, entre otras métricas clave de recursos humanos.</div>
+        <div class="badges">
+          <span class="tool-badge">VBA / VBS</span>
+          <span class="tool-badge">Power BI</span>
+          <span class="tool-badge">Excel</span>
+          <span class="tool-badge">ETL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #162a4a 0%, #1D9E75 100%);">
+        ⚙️
+        <span class="card-img-label">Próximamente</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Tu próximo proyecto aquí</div>
+        <div class="card-desc">Agrega aquí la descripción de tu segundo proyecto real. Incluye el contexto, el problema resuelto y el impacto generado.</div>
+        <div class="badges">
+          <span class="tool-badge">Herramienta 1</span>
+          <span class="tool-badge">Herramienta 2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #162a4a 0%, #854F0B 100%);">
+        📈
+        <span class="card-img-label">Próximamente</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Tu próximo proyecto aquí</div>
+        <div class="card-desc">Agrega aquí la descripción de tu tercer proyecto real. Cuéntale a los reclutadores qué impacto tuvo tu trabajo.</div>
+        <div class="badges">
+          <span class="tool-badge">Herramienta 1</span>
+          <span class="tool-badge">Herramienta 2</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">JNJ</div>
+  <p>© 2026 Josué Nivar de Jesús — Ingeniero Industrial</p>
+  <p>República Dominicana</p>
+</footer>
+
+<script>
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+</script>
+</body>
+</html>

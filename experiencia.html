@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Experiencia — Josué Nivar de Jesús</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="dark">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-badge">JNJ</div>
+    <div class="logo-info">
+      <p>Josué Nivar de Jesús</p>
+      <span>Ingeniero Industrial</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="sobre-mi.html">Sobre mí</a></li>
+    <li><a href="habilidades.html">Habilidades</a></li>
+    <li><a href="proyectos.html">Proyectos</a></li>
+    <li><a href="experiencia.html" class="active">Experiencia</a></li>
+    <li><a href="certificaciones.html">Certificaciones</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="page-header bg-dark" data-initials="JNJ">
+  <div class="page-header-tag">Trayectoria</div>
+  <h1>Experiencia <em>laboral</em></h1>
+  <p>Mi recorrido profesional y los lugares donde he aportado valor.</p>
+</div>
+
+<div class="bg-dark" style="padding: 4rem 3rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-tag" style="color: var(--gold);">Historial</div>
+    <h2 class="section-title" style="color: white; margin-bottom: 2rem;">Donde he trabajado</h2>
+    <div class="grid-3">
+
+      <div class="exp-card">
+        <div class="exp-card-img">🏦</div>
+        <div class="exp-card-body">
+          <div class="exp-period">20XX — Presente</div>
+          <div class="exp-role">Tu cargo aquí</div>
+          <div class="exp-company">Nombre de la empresa</div>
+          <div class="exp-desc">Describe tus responsabilidades principales y logros en este puesto. ¿Qué procesos mejoraste? ¿Qué herramientas usaste? ¿Cuál fue el impacto?</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-img">🏭</div>
+        <div class="exp-card-body">
+          <div class="exp-period">20XX — 20XX</div>
+          <div class="exp-role">Tu cargo anterior aquí</div>
+          <div class="exp-company">Nombre de la empresa</div>
+          <div class="exp-desc">Describe tus responsabilidades y los proyectos más relevantes que trabajaste en esta posición. Menciona resultados medibles si los tienes.</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-img">📋</div>
+        <div class="exp-card-body">
+          <div class="exp-period">20XX — 20XX</div>
+          <div class="exp-role">Otro cargo aquí</div>
+          <div class="exp-company">Nombre de la empresa</div>
+          <div class="exp-desc">Agrega otra experiencia laboral relevante. Puedes editar o eliminar estas tarjetas según la cantidad de empleos que tengas.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">JNJ</div>
+  <p>© 2026 Josué Nivar de Jesús — Ingeniero Industrial</p>
+  <p>República Dominicana</p>
+</footer>
+
+<script>
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+</script>
+</body>
+</html>

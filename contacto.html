@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contacto — Josué Nivar de Jesús</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="dark">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-badge">JNJ</div>
+    <div class="logo-info">
+      <p>Josué Nivar de Jesús</p>
+      <span>Ingeniero Industrial</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="sobre-mi.html">Sobre mí</a></li>
+    <li><a href="habilidades.html">Habilidades</a></li>
+    <li><a href="proyectos.html">Proyectos</a></li>
+    <li><a href="experiencia.html">Experiencia</a></li>
+    <li><a href="certificaciones.html">Certificaciones</a></li>
+    <li><a href="contacto.html" class="active">Contacto</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="page-header" data-initials="JNJ">
+  <div class="page-header-tag">Hablemos</div>
+  <h1>¿Tienes un <em>proyecto</em>?</h1>
+  <p>Estoy disponible para freelance, consultoría o nuevas oportunidades laborales.</p>
+</div>
+
+<div class="content">
+  <div class="contact-inner">
+    <div class="section-tag" style="text-align:center;">Canales de contacto</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom: 1rem;">Escríbeme</h2>
+    <p>No dudes en contactarme por cualquiera de estos canales. Respondo en menos de 24 horas.</p>
+    <div class="contact-cards">
+      <a href="mailto:josuenivar@gmail.com" class="contact-card">
+        <div class="contact-card-icon">✉️</div>
+        <div>
+          <div class="contact-card-label">Correo electrónico</div>
+          <div class="contact-card-value">josuenivar@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/josu%C3%A9-nivar-de-jes%C3%BAs" target="_blank" class="contact-card">
+        <div class="contact-card-icon">💼</div>
+        <div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">Josué Nivar de Jesús</div>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top: 3rem; padding: 2rem; background: var(--gray-50); border-radius: 16px; border: 1px solid var(--gray-100); text-align: left;">
+      <div class="section-tag">Disponibilidad</div>
+      <h3 style="font-size: 18px; font-weight: 500; color: var(--navy); margin-bottom: 1rem;">¿En qué puedo ayudarte?</h3>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700);">
+          <span style="color: #1D9E75; font-size: 16px;">✓</span> Dashboards e informes en Power BI
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700);">
+          <span style="color: #1D9E75; font-size: 16px;">✓</span> Automatización con macros VBA / VBS
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700);">
+          <span style="color: #1D9E75; font-size: 16px;">✓</span> Análisis y limpieza de datos
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700);">
+          <span style="color: #1D9E75; font-size: 16px;">✓</span> Consultoría en mejora de procesos
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700);">
+          <span style="color: #1D9E75; font-size: 16px;">✓</span> Modelado de indicadores de gestión (KPIs)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">JNJ</div>
+  <p>© 2026 Josué Nivar de Jesús — Ingeniero Industrial</p>
+  <p>República Dominicana</p>
+</footer>
+
+<script>
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+</script>
+</body>
+</html>

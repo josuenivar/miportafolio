@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sobre mí — Josué Nivar de Jesús</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="dark">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-badge">JNJ</div>
+    <div class="logo-info">
+      <p>Josué Nivar de Jesús</p>
+      <span>Ingeniero Industrial</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="sobre-mi.html" class="active">Sobre mí</a></li>
+    <li><a href="habilidades.html">Habilidades</a></li>
+    <li><a href="proyectos.html">Proyectos</a></li>
+    <li><a href="experiencia.html">Experiencia</a></li>
+    <li><a href="certificaciones.html">Certificaciones</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="page-header" data-initials="JNJ">
+  <div class="page-header-tag">Conóceme</div>
+  <h1>Sobre <em>mí</em></h1>
+  <p>Mi historia, mis valores y lo que me apasiona como ingeniero industrial.</p>
+</div>
+
+<div class="content">
+  <div class="about-grid">
+    <div>
+      <div class="about-avatar">JNJ</div>
+      <div class="chips">
+        <span class="chip">Power BI</span>
+        <span class="chip">VBA / Macros</span>
+        <span class="chip">Lean Manufacturing</span>
+        <span class="chip">Six Sigma</span>
+        <span class="chip">Excel Avanzado</span>
+        <span class="chip">Gestión de proyectos</span>
+        <span class="chip">Análisis de datos</span>
+        <span class="chip">Mejora continua</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag">Mi historia</div>
+      <h2 class="section-title">Ingeniero que convierte datos en valor</h2>
+      <p>Soy Josué Nivar de Jesús, Ingeniero Industrial con pasión por la automatización de procesos y el análisis de datos. Me especializo en crear soluciones que conectan la operación con la toma de decisiones estratégica.</p>
+      <p>Mi enfoque combina herramientas técnicas como Power BI y macros en VBA con metodologías de mejora continua, logrando resultados medibles y sostenibles en las organizaciones donde trabajo.</p>
+      <p>Creo firmemente que los datos bien interpretados son el motor más poderoso de transformación en cualquier organización. Por eso me dedico a construir puentes entre la información y quienes toman decisiones.</p>
+      <p style="color: #C9963A; font-style: italic; font-size: 14px;">📌 Actualmente abierto a nuevas oportunidades y proyectos freelance en República Dominicana y remoto.</p>
+      <div style="margin-top: 2rem;">
+        <a href="contacto.html" class="btn-gold">Contáctame</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">JNJ</div>
+  <p>© 2026 Josué Nivar de Jesús — Ingeniero Industrial</p>
+  <p>República Dominicana</p>
+</footer>
+
+<script>
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+const links = document.querySelectorAll('.nav-links a');
+links.forEach(l => { if (l.href === window.location.href) l.classList.add('active'); });
+</script>
+</body>
+</html>
