@@ -5,16 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Proyectos — Josué Nivar de Jesús</title>
 <link rel="stylesheet" href="style.css" />
+<style>
+  .project-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: 16px; overflow: hidden; margin-bottom: 2.5rem; box-shadow: 0 2px 12px rgba(10,22,40,0.06); }
+  .project-top { display: grid; grid-template-columns: 1fr 1fr; }
+  .project-info { padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .project-num { font-family: 'Playfair Display', serif; font-size: 52px; color: var(--gray-100); font-weight: 600; line-height: 1; margin-bottom: 6px; }
+  .project-tag-label { display: inline-block; background: var(--gold-light); color: #8a6020; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+  .project-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+  .project-desc { font-size: 13px; color: var(--gray-500); line-height: 1.8; font-weight: 300; margin-bottom: 1.2rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tool-badge { padding: 4px 12px; background: var(--blue-light); color: var(--blue); border-radius: 4px; font-size: 11px; font-weight: 500; }
+  .gallery-panel { background: var(--gray-50); border-left: 1px solid var(--gray-100); display: flex; flex-direction: column; min-height: 320px; }
+  .gallery-main { flex: 1; position: relative; overflow: hidden; background: var(--navy); cursor: zoom-in; min-height: 260px; display: flex; align-items: center; justify-content: center; }
+  .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; display: block; }
+  .gallery-main img:hover { transform: scale(1.04); }
+  .gallery-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,0.25); font-size: 13px; text-align: center; padding: 2rem; }
+  .gallery-placeholder span { font-size: 40px; }
+  .gallery-thumbs { display: flex; gap: 6px; padding: 8px; background: var(--white); border-top: 1px solid var(--gray-100); overflow-x: auto; min-height: 60px; align-items: center; }
+  .thumb { width: 54px; height: 42px; border-radius: 6px; object-fit: cover; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; transition: border-color 0.2s; }
+  .thumb.active { border-color: var(--blue); }
+  .thumb-add { width: 54px; height: 42px; border-radius: 6px; border: 1.5px dashed var(--gray-300); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 22px; color: var(--gray-300); flex-shrink: 0; background: var(--gray-50); transition: all 0.2s; }
+  .thumb-add:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+  .upload-input { display: none; }
+  .video-section { border-top: 1px solid var(--gray-100); padding: 1.2rem 2rem; background: var(--gray-50); }
+  .video-label { font-size: 12px; color: var(--gray-500); margin-bottom: 8px; font-weight: 500; }
+  .video-row { display: flex; gap: 8px; }
+  .video-row input { flex: 1; padding: 8px 12px; border: 1px solid var(--gray-300); border-radius: 8px; font-size: 13px; font-family: 'DM Sans', sans-serif; color: var(--navy); outline: none; background: var(--white); }
+  .video-row input:focus { border-color: var(--blue); }
+  .video-row button { padding: 8px 16px; background: var(--blue); color: white; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; }
+  .video-row button:hover { opacity: 0.88; }
+  .video-frame { margin-top: 10px; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; display: none; }
+  .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999; align-items: center; justify-content: center; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 10px; object-fit: contain; }
+  .lightbox-close { position: absolute; top: 20px; right: 28px; font-size: 30px; color: white; cursor: pointer; }
+  @media (max-width: 768px) {
+    .project-top { grid-template-columns: 1fr; }
+    .gallery-panel { border-left: none; border-top: 1px solid var(--gray-100); }
+    .video-section { padding: 1rem 1.2rem; }
+  }
+</style>
 </head>
 <body>
 
 <nav class="dark">
   <a href="index.html" class="nav-logo">
     <div class="logo-badge">JNJ</div>
-    <div class="logo-info">
-      <p>Josué Nivar de Jesús</p>
-      <span>Ingeniero Industrial</span>
-    </div>
+    <div class="logo-info"><p>Josué Nivar de Jesús</p><span>Ingeniero Industrial</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="sobre-mi.html">Sobre mí</a></li>
@@ -36,56 +74,125 @@
 <div class="content">
   <div class="section-tag">Proyectos reales</div>
   <h2 class="section-title">Lo que he construido</h2>
-  <div class="grid-3">
 
-    <div class="card">
-      <div class="card-img" style="background: linear-gradient(135deg, #0a1628 0%, #185FA5 100%);">
-        📊
-        <span class="card-img-label">Automatización</span>
+  <!-- PROYECTO 1 -->
+  <div class="project-card">
+    <div class="project-top">
+      <div class="project-info">
+        <div>
+          <div class="project-num">01</div>
+          <span class="project-tag-label">Automatización · Datos</span>
+          <div class="project-title">Resumen de Puestos y Posiciones — Banco y Empresas</div>
+          <div class="project-desc">Desarrollo de una macro en VBS para filtrar y limpiar la data generada desde la herramienta de estructura organizacional, exportándola a Power BI para visualizar en tiempo real la cantidad de puestos y posiciones por grupo ocupacional, entre otras métricas clave de recursos humanos.</div>
+          <div class="badges">
+            <span class="tool-badge">VBA / VBS</span>
+            <span class="tool-badge">Power BI</span>
+            <span class="tool-badge">Excel</span>
+            <span class="tool-badge">ETL</span>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <div class="card-title">Resumen de Puestos y Posiciones — Banco y Empresas</div>
-        <div class="card-desc">Desarrollo de una macro en VBS para filtrar y limpiar la data generada desde la herramienta de estructura organizacional, exportándola a Power BI para visualizar en tiempo real la cantidad de puestos y posiciones por grupo ocupacional, entre otras métricas clave de recursos humanos.</div>
-        <div class="badges">
-          <span class="tool-badge">VBA / VBS</span>
-          <span class="tool-badge">Power BI</span>
-          <span class="tool-badge">Excel</span>
-          <span class="tool-badge">ETL</span>
+      <div class="gallery-panel">
+        <div class="gallery-main" id="main-p1" onclick="openLightbox(this)">
+          <img src="imagenes/Abril2026.jpeg" alt="Proyecto Puestos y Posiciones" onerror="this.outerHTML='<div class=\'gallery-placeholder\'><span>📊</span><p>Coloca tu imagen en<br><strong style=\'color:white\'>imagenes/Abril2026.jpeg</strong></p></div>'" />
+        </div>
+        <div class="gallery-thumbs" id="thumbs-p1">
+          <img src="imagenes/Abril2026.jpeg" class="thumb active" alt="Abril2026" onerror="this.style.display='none'" />
+          <div class="thumb-add" onclick="document.getElementById('up-p1').click()" title="Subir más imágenes">+</div>
+          <input type="file" id="up-p1" class="upload-input" accept="image/*" multiple onchange="addImages(this,'main-p1','thumbs-p1')" />
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-img" style="background: linear-gradient(135deg, #162a4a 0%, #1D9E75 100%);">
-        ⚙️
-        <span class="card-img-label">Próximamente</span>
+    <div class="video-section">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+        <div class="video-label" style="margin:0;">🎬 Videos del proyecto</div>
+        <a href="https://www.youtube.com/@matematicasconjosue" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#ff0000;color:white;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:500;text-decoration:none;">▶ Mi canal: Matemáticas Con Josué</a>
       </div>
-      <div class="card-body">
-        <div class="card-title">Tu próximo proyecto aquí</div>
-        <div class="card-desc">Agrega aquí la descripción de tu segundo proyecto real. Incluye el contexto, el problema resuelto y el impacto generado.</div>
-        <div class="badges">
-          <span class="tool-badge">Herramienta 1</span>
-          <span class="tool-badge">Herramienta 2</span>
-        </div>
+      <div class="video-label">Pega un enlace de YouTube y carga el video de referencia:</div>
+      <div class="video-row">
+        <input type="text" id="yt-p1" placeholder="https://www.youtube.com/watch?v=..." />
+        <button onclick="loadYT('yt-p1','frame-p1')">Cargar video</button>
       </div>
+      <div class="video-frame" id="frame-p1"><iframe allowfullscreen></iframe></div>
     </div>
-
-    <div class="card">
-      <div class="card-img" style="background: linear-gradient(135deg, #162a4a 0%, #854F0B 100%);">
-        📈
-        <span class="card-img-label">Próximamente</span>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Tu próximo proyecto aquí</div>
-        <div class="card-desc">Agrega aquí la descripción de tu tercer proyecto real. Cuéntale a los reclutadores qué impacto tuvo tu trabajo.</div>
-        <div class="badges">
-          <span class="tool-badge">Herramienta 1</span>
-          <span class="tool-badge">Herramienta 2</span>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <!-- PROYECTO 2 -->
+  <div class="project-card">
+    <div class="project-top">
+      <div class="project-info">
+        <div>
+          <div class="project-num">02</div>
+          <span class="project-tag-label">Próximamente</span>
+          <div class="project-title">Tu segundo proyecto aquí</div>
+          <div class="project-desc">Agrega aquí la descripción de tu segundo proyecto real. Incluye el contexto, el problema resuelto y el impacto generado para la organización.</div>
+          <div class="badges">
+            <span class="tool-badge">Herramienta 1</span>
+            <span class="tool-badge">Herramienta 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-panel">
+        <div class="gallery-main" id="main-p2" onclick="openLightbox(this)">
+          <div class="gallery-placeholder"><span>⚙️</span><p>Haz clic en + para subir<br>imágenes del proyecto</p></div>
+        </div>
+        <div class="gallery-thumbs" id="thumbs-p2">
+          <div class="thumb-add" onclick="document.getElementById('up-p2').click()" title="Subir imagen">+</div>
+          <input type="file" id="up-p2" class="upload-input" accept="image/*" multiple onchange="addImages(this,'main-p2','thumbs-p2')" />
+        </div>
+      </div>
+    </div>
+    <div class="video-section">
+      <div class="video-label">🎬 Video de YouTube — pega el enlace y haz clic en "Cargar"</div>
+      <div class="video-row">
+        <input type="text" id="yt-p2" placeholder="https://www.youtube.com/watch?v=..." />
+        <button onclick="loadYT('yt-p2','frame-p2')">Cargar video</button>
+      </div>
+      <div class="video-frame" id="frame-p2"><iframe allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+  <!-- PROYECTO 3 -->
+  <div class="project-card">
+    <div class="project-top">
+      <div class="project-info">
+        <div>
+          <div class="project-num">03</div>
+          <span class="project-tag-label">Próximamente</span>
+          <div class="project-title">Tu tercer proyecto aquí</div>
+          <div class="project-desc">Agrega aquí la descripción de tu tercer proyecto real. Cuéntale a los reclutadores qué impacto tuvo tu trabajo en la organización.</div>
+          <div class="badges">
+            <span class="tool-badge">Herramienta 1</span>
+            <span class="tool-badge">Herramienta 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-panel">
+        <div class="gallery-main" id="main-p3" onclick="openLightbox(this)">
+          <div class="gallery-placeholder"><span>📈</span><p>Haz clic en + para subir<br>imágenes del proyecto</p></div>
+        </div>
+        <div class="gallery-thumbs" id="thumbs-p3">
+          <div class="thumb-add" onclick="document.getElementById('up-p3').click()" title="Subir imagen">+</div>
+          <input type="file" id="up-p3" class="upload-input" accept="image/*" multiple onchange="addImages(this,'main-p3','thumbs-p3')" />
+        </div>
+      </div>
+    </div>
+    <div class="video-section">
+      <div class="video-label">🎬 Video de YouTube — pega el enlace y haz clic en "Cargar"</div>
+      <div class="video-row">
+        <input type="text" id="yt-p3" placeholder="https://www.youtube.com/watch?v=..." />
+        <button onclick="loadYT('yt-p3','frame-p3')">Cargar video</button>
+      </div>
+      <div class="video-frame" id="frame-p3"><iframe allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="Imagen ampliada" />
 </div>
 
 <footer>
@@ -96,6 +203,47 @@
 
 <script>
 function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+
+function addImages(input, mainId, thumbsId) {
+  const files = Array.from(input.files);
+  const mainEl = document.getElementById(mainId);
+  const thumbsEl = document.getElementById(thumbsId);
+  const addBtn = thumbsEl.querySelector('.thumb-add');
+  files.forEach((file, i) => {
+    const url = URL.createObjectURL(file);
+    const isFirst = !mainEl.querySelector('img');
+    if (isFirst && i === 0) {
+      mainEl.innerHTML = `<img src="${url}" alt="Proyecto" />`;
+    }
+    const thumb = document.createElement('img');
+    thumb.src = url;
+    thumb.className = 'thumb';
+    if (isFirst && i === 0) thumb.classList.add('active');
+    thumb.onclick = () => {
+      mainEl.innerHTML = `<img src="${url}" alt="Proyecto" />`;
+      thumbsEl.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    };
+    thumbsEl.insertBefore(thumb, addBtn);
+  });
+}
+
+function loadYT(inputId, frameId) {
+  const url = document.getElementById(inputId).value.trim();
+  const match = url.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  if (!match) { alert('Por favor pega un enlace válido de YouTube'); return; }
+  const frame = document.getElementById(frameId);
+  frame.querySelector('iframe').src = `https://www.youtube.com/embed/${match[1]}`;
+  frame.style.display = 'block';
+}
+
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  if (!img) return;
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
 </script>
 </body>
 </html>
